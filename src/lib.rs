@@ -83,6 +83,10 @@ pub fn is_legacy(address: &String) -> bool {
 pub fn is_nested_segwit(address: &String) -> bool {
     is_p2sh(address)
 }
+// Nested segwit is also called wrapped segwit
+pub fn is_wrapped_segwit(address: &String) -> bool {
+    is_nested_segwit(address)
+}
 
 pub fn is_segwit_native(address: &String) -> bool {
     is_p2wpkh(address) || is_p2wsh(address)

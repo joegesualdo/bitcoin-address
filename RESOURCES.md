@@ -8,6 +8,7 @@
 - https://blog.trezor.io/bitcoin-addresses-and-how-to-use-them-35e7312098ff
 - https://rf5.github.io/2022/02/14/btc-address-intro.html
 - https://river.com/learn/terms/p/p2wpkh/
+- https://bitcoin.stackexchange.com/questions/100434/what-is-the-difference-between-native-segwit-and-bech32
 - https://medium.com/coinmonks/bitcoin-transaction-internals-explained-8fd6d4e77eaa
 - https://chainx-org.medium.com/main-bitcoin-address-types-cb5ea300e1af
 - https://github.com/chainx-org/chainx-technical-archive/blob/main/LuoJianMan/Taproot/03_Upgrade-from-SegWitV0-to-SegWitV1.md
