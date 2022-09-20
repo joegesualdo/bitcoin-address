@@ -1,6 +1,7 @@
 ## Resources
 > Learn about the types of bitcoin addresses
 
+- https://en.bitcoin.it/wiki/List_of_address_prefixes
 - https://bitcoin.stackexchange.com/questions/109719/how-do-you-tell-p2wsh-invoice-addresses-apart-from-p2sh
 - https://bitcoinbriefly.com/practical-guide-bitcoin-addresses-explained/
 - https://www.btcschools.net/bitcoin/bitcoin_script_p2sh_p2wsh.php
