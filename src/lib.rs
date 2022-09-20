@@ -38,7 +38,12 @@ fn is_p2sh(address: &String) -> bool {
     let has_p2sh_leading_symbol = p2sh_leading_symbols
         .iter()
         .any(|leading_symbol| address.starts_with(leading_symbol));
-    has_character_count(address, 34) && has_p2sh_leading_symbol
+    let has_correct_char_count =
+        // mainnet
+        has_character_count(address, 34) 
+        // testnet
+        || has_character_count(address, 35); 
+    has_correct_char_count && has_p2sh_leading_symbol
 }
 // ----------------------------------------------------------------------------------------
 
