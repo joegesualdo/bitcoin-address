@@ -9,9 +9,18 @@ fn has_character_count(s: &str, char_count: u64) -> bool {
 //
 // Pay to Pubkey Hash (P2PKH) addresses start with 1 and represent a single public key.
 fn is_p2pkh(address: &String) -> bool {
+    let p2pkh_leading_symbols = vec![
+        "1", // mainnet
+        "m", //testnet
+        "n", //testnet
+    ];
+
+    let has_p2pkh_leading_symbol = p2pkh_leading_symbols
+        .iter()
+        .any(|leading_symbol| address.starts_with(leading_symbol));
     let has_correct_char_count =
         has_character_count(address, 33) || has_character_count(address, 34);
-    has_correct_char_count && address.starts_with("1")
+    has_correct_char_count && has_p2pkh_leading_symbol
 }
 // ----------------------------------------------------------------------------------------
 
@@ -21,7 +30,15 @@ fn is_p2pkh(address: &String) -> bool {
 //
 // Pay to Script Hash (P2SH) addresses present a much more general validation scheme that can encode an arbitrary script. These start with "3" and are common for multi-signature setups.
 fn is_p2sh(address: &String) -> bool {
-    has_character_count(address, 34) && address.starts_with("3")
+    let p2sh_leading_symbols = vec![
+        "2", // mainnet
+        "3", //testnet
+    ];
+
+    let has_p2sh_leading_symbol = p2sh_leading_symbols
+        .iter()
+        .any(|leading_symbol| address.starts_with(leading_symbol));
+    has_character_count(address, 34) && has_p2sh_leading_symbol
 }
 // ----------------------------------------------------------------------------------------
 
@@ -52,7 +69,15 @@ fn could_be_p2sh_p2wsh(address: &String) -> bool {
 //
 // Pay to Witness Pubkey Hash (P2WPKH) addresses are version 0 segregated witness (SegWit) programs and behave similarly to P2PKH. All version 0 SegWit addresses start with "bc1q"
 fn is_p2wpkh(address: &String) -> bool {
-    has_character_count(address, 42) && address.starts_with("bc1q")
+    let p2wpkh_leading_symbols = vec![
+        "bc1q", // mainnet
+        "tb1q", //testnet
+    ];
+
+    let has_p2wpkh_leading_symbol = p2wpkh_leading_symbols
+        .iter()
+        .any(|leading_symbol| address.starts_with(leading_symbol));
+    has_character_count(address, 42) && has_p2wpkh_leading_symbol
 }
 // ----------------------------------------------------------------------------------------
 
@@ -62,7 +87,15 @@ fn is_p2wpkh(address: &String) -> bool {
 // Pay to Witness Script Hash (P2WSH) addresses are version 0 segregated witness (SegWit) programs and behave similarly to P2SH. All version 0 SegWit addresses start with "bc1q"
 //
 fn is_p2wsh(address: &String) -> bool {
-    has_character_count(address, 62) && address.starts_with("bc1q")
+    let p2wsh_leading_symbols = vec![
+        "bc1q", // mainnet
+        "tb1q", //testnet
+    ];
+
+    let has_p2wsh_leading_symbol = p2wsh_leading_symbols
+        .iter()
+        .any(|leading_symbol| address.starts_with(leading_symbol));
+    has_character_count(address, 62) && has_p2wsh_leading_symbol
 }
 //
 // ----------------------------------------------------------------------------------------
@@ -72,7 +105,15 @@ fn is_p2wsh(address: &String) -> bool {
 // P2TR addresses are 62 characters long, use bech32m encoding, and (on mainnet) start with "bc1p".
 
 fn is_p2tr(address: &String) -> bool {
-    has_character_count(address, 62) && address.starts_with("bc1p")
+    let p2tr_leading_symbols = vec![
+        "bc1p", // mainnet
+        "tb1p", //testnet
+    ];
+
+    let has_p2tr_leading_symbol = p2tr_leading_symbols
+        .iter()
+        .any(|leading_symbol| address.starts_with(leading_symbol));
+    has_character_count(address, 62) && has_p2tr_leading_symbol
 }
 // ----------------------------------------------------------------------------------------
 
