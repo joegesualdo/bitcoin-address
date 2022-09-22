@@ -12,7 +12,7 @@
 > Add package to Cargo.toml file
 ```rust
 [dependencies]
-bitcoin-address = "0.1.3"
+bitcoin-address = "0.1.4"
 ```
 
 ## Usage:

@@ -29,7 +29,7 @@ fn is_p2pkh(address: &String) -> bool {
 // P2SH addresses are 34 characters long, use Base58Check encoding, and (on mainnet) start with "3".
 //
 // Pay to Script Hash (P2SH) addresses present a much more general validation scheme that can encode an arbitrary script. These start with "3" and are common for multi-signature setups.
-fn is_p2sh(address: &String) -> bool {
+pub fn is_p2sh(address: &String) -> bool {
     let p2sh_leading_symbols = vec![
         "2", // mainnet
         "3", //testnet
