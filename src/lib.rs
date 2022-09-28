@@ -8,7 +8,7 @@ fn has_character_count(s: &str, char_count: u64) -> bool {
 // P2PKH addresses are 33-34 characters long, use Base58Check encoding, and (on mainnet) start with "1".
 //
 // Pay to Pubkey Hash (P2PKH) addresses start with 1 and represent a single public key.
-fn is_p2pkh(address: &String) -> bool {
+pub fn is_p2pkh(address: &String) -> bool {
     let p2pkh_leading_symbols = vec![
         "1", // mainnet
         "m", //testnet
@@ -73,7 +73,7 @@ fn could_be_p2sh_p2wsh(address: &String) -> bool {
 // P2WPKH addresses are 42 characters long, use bech32 encoding, and (on mainnet) start with "bc1q".
 //
 // Pay to Witness Pubkey Hash (P2WPKH) addresses are version 0 segregated witness (SegWit) programs and behave similarly to P2PKH. All version 0 SegWit addresses start with "bc1q"
-fn is_p2wpkh(address: &String) -> bool {
+pub fn is_p2wpkh(address: &String) -> bool {
     let p2wpkh_leading_symbols = vec![
         "bc1q", // mainnet
         "tb1q", //testnet
@@ -91,7 +91,7 @@ fn is_p2wpkh(address: &String) -> bool {
 // P2WSH addresses are 62 characters long, use bech32 encoding, and (on mainnet) start with "bc1q".
 // Pay to Witness Script Hash (P2WSH) addresses are version 0 segregated witness (SegWit) programs and behave similarly to P2SH. All version 0 SegWit addresses start with "bc1q"
 //
-fn is_p2wsh(address: &String) -> bool {
+pub fn is_p2wsh(address: &String) -> bool {
     let p2wsh_leading_symbols = vec![
         "bc1q", // mainnet
         "tb1q", //testnet
@@ -109,7 +109,7 @@ fn is_p2wsh(address: &String) -> bool {
 // Pay to taproot
 // P2TR addresses are 62 characters long, use bech32m encoding, and (on mainnet) start with "bc1p".
 
-fn is_p2tr(address: &String) -> bool {
+pub fn is_p2tr(address: &String) -> bool {
     let p2tr_leading_symbols = vec![
         "bc1p", // mainnet
         "tb1p", //testnet
