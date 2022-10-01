@@ -1,4 +1,3 @@
-//
 fn has_character_count(s: &str, char_count: u64) -> bool {
     s.chars().count() as u64 == char_count
 }
