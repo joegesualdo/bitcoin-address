@@ -140,6 +140,7 @@ pub fn is_segwit_native(address: &String) -> bool {
 pub fn is_segwit_v0(address: &String) -> bool {
     is_segwit_native(address) || is_p2sh(address)
 }
+
 pub fn is_segwit_v1(address: &String) -> bool {
     is_taproot(address)
 }
