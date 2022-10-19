@@ -153,7 +153,6 @@ pub fn is_taproot(address: &String) -> bool {
 #[cfg(test)]
 mod tests {
     use super::*;
-
     #[test]
     fn is_legacy_works() {
         let legacy_address = "1J9uwBYepTm5737RtzkSEePTevGgDGLP5S".to_string();
